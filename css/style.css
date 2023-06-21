@@ -1,0 +1,94 @@
+body,
+button,
+input {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+}
+
+body {
+  padding: 20px 100px;
+
+}
+
+form {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+form input {
+  border: 1px solid grey;
+  padding: 7px 10px;
+  border-radius: 3px;
+  width: 400px;
+  text-align: center;
+}
+
+li {
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  padding: 5px;
+}
+
+button,
+.button {
+  padding: 5px 10px;
+  border: 1px solid #000;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+.active>button,
+.active>.button {
+  font-weight: bold;
+  border-width: 2px;
+}
+
+li>button,
+li>.button {
+  padding-right: 30px;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+  margin: -25px 0 -25px -30px;
+  gap: 2px;
+  transition: 200ms;
+}
+
+:not(.active)>.arrows,
+#groups:not(:has(ul .active)) .in,
+.button:has(.active)~.in {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.arrows>button,
+.controls>button,
+.in {
+  padding: 0 4px 3px;
+  line-height: 1;
+}
+
+.in{
+  padding-left: 2px;
+}
+
+
+
+.controls>button{
+  width: 20px;
+}
+
+:checked+.controls .show,
+:not(:checked)+.controls .hide,
+input:not(:checked)~ul,
+.controls:not(:has(~ul>:first-child)) {
+display: none;
+}
+
